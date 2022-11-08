@@ -1,4 +1,5 @@
 ﻿using Businness.Abstract;
+using Businness.CCS;
 using Businness.Constants;
 using Businness.ValidationRules.FluentValidation;
 using Core.Aspects.Autofac.Validation;
@@ -22,20 +23,24 @@ namespace Businness.Concrete
     public class ProductManager : IProductService
     {
         IProductDal _productDal;
+    
 
         public ProductManager(IProductDal productDal)
         {
             _productDal = productDal;
+     
         }
-        [ValidationAspect(typeof(ProductValidator))]
+         [ValidationAspect(typeof(ProductValidator))]
         public IResult Add(Product product)
 
         {
+
 
             _productDal.Add(product);
 
             return new SuccessResult(Messages.ProductAdded);
         }
+
 
 
         public IDataResult<List<Product>> GetAll()
