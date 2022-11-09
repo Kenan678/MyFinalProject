@@ -14,5 +14,8 @@ namespace Businness.Constants
         public static string ProductNameInvalid = "Urun ismi gecersiz";
         public static string MaintenanceTime="Sistem bakimda";
         public static string ProductListed="Urunler listelendi";
+        public static string ProductCountOfCategoryError = "Bir kategoride en cox 10 urun olar";
+        public static string ProductNameAlreadyExists="Bu adda urun var";
+        public static string CategoryLimitexceded="15 den cox kategoriya olmaz";
     }
 }
